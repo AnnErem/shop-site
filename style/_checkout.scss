@@ -1,0 +1,133 @@
+@import "vars";
+
+// форма регистрации
+.registration {
+    margin: 100px 0;
+    &__block {
+        height: 380px;
+        width: 48%;
+        margin: 0px 20px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__margins {
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__title {
+        font-family: Lato;
+        font-size: 13px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $dark-color;
+    }
+    &__desc {
+        font-family: Lato;
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: 400;
+        color: $desc-color;
+    }
+    &__button {
+        min-width: 80px;
+        width: 30%;
+        padding: 10px 6px;
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &__radio {
+        font-size: 12px;
+    }
+    &__input-label {
+        font-size: 12px;
+        &::after {
+            content: "*";
+            margin-left: 5px;
+            font-family: Lato;
+            font-size: 17px;
+            line-height: 20px;
+            font-weight: 400;
+            color: $required;
+        }
+    }
+    &__input {
+        padding: 10px 0;
+        background-color: #ffffff;
+        border: 1px solid #eaeaea;
+        margin: 10px 0;
+    }
+    &__link {
+        text-decoration: none;
+        padding: 5px 10px;
+        font-size: 12px;
+        &:hover {
+            color: $required;
+        }
+    }
+}
+// немного правим стили аккордеона с бутстрапа
+.accordion-body {
+    display: flex;
+}
+.accordion-item {
+    border: none;
+}
+.accordion-button {
+    font-family: Lato;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $dark-color;
+    &:not(.collapsed) {
+        color: $dark-color;
+        background: transparent;
+        box-shadow: none;
+    }
+    &::after {
+        display: none;
+    }
+    &:focus {
+        box-shadow: none;
+    }
+}
+// меняем первоначальный стиль radio 
+input[type=radio] {
+    appearance: none;
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    border: 1px solid $light-color;
+    margin-right: 5px;
+    position: relative;
+}
+input[type=radio]:checked::after {
+    content: "";
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    background-color: $dark-color;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+// обязательно к заполнению
+.required {
+    display: inline-block;
+    font-family: Lato;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+    color: $required;
+}
+// просто флекс
+.flex {
+    display: flex;
+    align-items: center;
+}
