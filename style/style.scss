@@ -3,7 +3,6 @@
 }
 @import "vars";
 @import "mixins";
-@import "checkout";
 
 body{
     padding-top: 25px;
@@ -26,6 +25,10 @@ summary::after {
 }
 details[open] > summary::after {
     content: '\25B2';
+}
+// здесь чекбокс
+input[type="checkbox"] {
+    margin: 0 10px;
 }
 // центрирование
 .container {
@@ -69,6 +72,7 @@ details[open] > summary::after {
     display: flex;
     justify-content: space-between;
     width: 165px;
+    margin-bottom: 10px;
     &__img {
         height: 50px;
     }
@@ -81,7 +85,7 @@ details[open] > summary::after {
         letter-spacing: 0.025em;
         color: $dark-color;
         margin: 0;
-        padding: 10px 0;
+        padding: 15px 0 0;
     }
 }
 // форма поиска
@@ -125,7 +129,6 @@ details[open] > summary::after {
     &__button {
         border-radius: 0px 3px 3px 0px;
         border: 1px solid #e6e6e6;
-        padding: 10px;
         height: 34px;
         color: $light-color;
         &:hover{
@@ -518,11 +521,9 @@ details[open] > summary::after {
 // Коробка с товарами
 .item-box {
     padding: 50px 0;
-    display: grid;
-    grid-template-columns: repeat(4, 260px);
-    grid-row-gap: 30px;
-    grid-column-gap: 10px;
-    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     &__index {
     }
 }
@@ -531,6 +532,7 @@ details[open] > summary::after {
     width: fit-content;
     padding-bottom: 10px;
     position: relative;
+    margin-bottom: 20px;
     &__link {
         text-decoration: none;
     }
@@ -569,6 +571,9 @@ details[open] > summary::after {
         margin: 0;
         padding: 0 10px;
         display: block;
+    }
+    &__img {
+        margin-bottom: 10px;
     }
     &:hover {
         @include shadow;
@@ -752,6 +757,7 @@ details[open] > summary::after {
     }
     &__button {
         width: 30%;
+        min-width: fit-content;
         padding: 10px;
         background-color: $bright-color;
         font-size: 14px;
@@ -920,9 +926,6 @@ details[open] > summary::after {
         height: 400px;
     }
     }
-    .item-box {
-        grid-template-columns: repeat(3, 260px);
-    }
     .offer {
         &__block {
             width: 50%;
@@ -1025,9 +1028,6 @@ details[open] > summary::after {
             margin: auto 15% 0;
         }
     }
-    .item-box {
-        grid-template-columns: repeat(2, 260px);
-    }
     .offer {
         flex-direction: column;
         &__block{
@@ -1108,9 +1108,6 @@ details[open] > summary::after {
     }
 }
 @media (max-width: 545px) {
-    .item-box {
-        grid-template-columns: 260px;
-    }
     .advantage {
         flex-direction: column;
     }
@@ -1126,4 +1123,10 @@ details[open] > summary::after {
             width: 50%;
         }
     }
+    .cart__dropdown {
+        right: auto;
+    }
 }
+
+@import "checkout";
+@import "product";
