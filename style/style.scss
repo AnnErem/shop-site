@@ -527,8 +527,6 @@ input[type="checkbox"] {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    &__index {
-    }
 }
 // Один товар
 .item {
@@ -785,7 +783,6 @@ input[type="checkbox"] {
 	&__info {
         width: 40%;
     }
-	&__logo {}
 	&__desc {
         font-size: 14px;
         line-height: 24px;
@@ -798,7 +795,6 @@ input[type="checkbox"] {
         display: flex;
         justify-content: space-between;
     }
-	&__nav-block {}
 	&__title {
         font-size: 18px;
         font-weight: 700;
@@ -1040,10 +1036,12 @@ input[type="checkbox"] {
         }
         &__block-advantage{
             width: 100%;
+            max-width: 767px;
+            align-self: center;
         }
         &__text{
             align-self: center;
-            margin: 0 0 0 10px;
+            margin: 0 0 0 4%;
         }
     }
     .advantage {

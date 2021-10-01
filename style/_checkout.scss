@@ -131,3 +131,17 @@ input[type=radio]:checked::after {
     display: flex;
     align-items: center;
 }
+
+@media (max-width: 545px) {
+    .accordion-body {
+        flex-direction: column;
+    }
+    .registration__block {
+        height: 250px;
+        width: 80%;
+    }
+    .registration__input {
+        padding: 0 10px;
+        margin: 6px 0;
+    }
+}
