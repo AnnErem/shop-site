@@ -230,6 +230,7 @@ input[type="checkbox"] {
   padding: 15px 5px;
   border-bottom: 1px solid rgba(237, 237, 237, 0.74);
   text-decoration: none;
+  width: 250px;
 }
 
 .cart-item__img {
@@ -278,10 +279,22 @@ input[type="checkbox"] {
   color: #f16d7f;
 }
 
+.cart-item__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+}
+
 .cart-item__delete {
+  cursor: pointer;
+  -ms-grid-column-align: end;
+      justify-self: end;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  background: transparent;
+  border: none;
   color: #c0c0c0;
 }
 
@@ -436,6 +449,10 @@ input[type="checkbox"] {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.cart__dropdown_hidden {
+  display: none;
 }
 
 .cart__total-price {
